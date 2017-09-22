@@ -40,7 +40,7 @@ app.post('/users', function(req, res){
   res.send(user);
 });
 
-app.listen(process.env.HEROKU_PRIVATE_IP || process.env.PORT || 8888, function () {
+app.listen(8888,process.env.HEROKU_PRIVATE_IP, function () {
   if(process.env.HEROKU_PRIVATE_IP){
     console.log("HEROKU_DNS_FORMATION_NAME "+process.env.HEROKU_DNS_FORMATION_NAME);
     console.log("HEROKU_DNS_DYNO_NAME "+process.env.HEROKU_DNS_DYNO_NAME);
