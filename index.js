@@ -40,14 +40,7 @@ app.post('/users', function(req, res){
   res.send(user);
 });
 
-console.log("HEROKU_PRIVATE_IP "+process.env.HEROKU_PRIVATE_IP);
-app.listen(8888,process.env.HEROKU_PRIVATE_IP || "localhost", function () {
-  if(process.env.HEROKU_PRIVATE_IP){
-    console.log("HEROKU_DNS_FORMATION_NAME "+process.env.HEROKU_DNS_FORMATION_NAME);
-    console.log("HEROKU_DNS_DYNO_NAME "+process.env.HEROKU_DNS_DYNO_NAME);
-    console.log("HEROKU_DNS_APP_NAME "+process.env.HEROKU_DNS_APP_NAME);
-    console.log("HEROKU_PRIVATE_IP "+process.env.HEROKU_PRIVATE_IP);
-  }
+app.listen(process.env.PORT || 8888, function () {
   console.log('Users service listening on port '+ (process.env.PORT || 8888));
 });
 
